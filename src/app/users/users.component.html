@@ -1,0 +1,29 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .centerdiv{ 
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        font-size:large;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+        font:bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centerdiv">
+    <table *ngFor="let user of users | slice:0:3">
+      <tr>{{user}}</tr>
+    </table>
+</div>
+  </body>
+</html>
+
+<router-outlet></router-outlet>
+<router-outlet></router-outlet>
