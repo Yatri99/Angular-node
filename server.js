@@ -14,6 +14,6 @@ app.get('*',(req,res)=>{
 
 });
 app.listen(4600,(req,res)=>{
-    console.log('Running on server..');
+    console.log('Server is running on localhost:4600');
 
 });

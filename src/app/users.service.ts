@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class UsersService {
 
@@ -16,3 +14,4 @@ export class UsersService {
   
   }
 }
+ 

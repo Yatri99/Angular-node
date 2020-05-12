@@ -17,13 +17,19 @@
     </style>
   </head>
   <body>
+    <!-- <div class="centerdiv" *ngFor="let user of users">
+      <span>{{user.name}}</span><br>
+
+    </div> -->
+ 
     <div class="centerdiv">
-    <table *ngFor="let user of users | slice:0:3">
-      <tr>{{user}}</tr>
-    </table>
-</div>
+       
+
+        <span *ngFor="let user of users | slice:0:3">
+            <span>{{user.name}}</span><br>
+     
+        </span>
+    </div>
   </body>
 </html>
 
-<router-outlet></router-outlet>
-<router-outlet></router-outlet>

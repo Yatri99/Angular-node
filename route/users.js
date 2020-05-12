@@ -1,56 +1,33 @@
 const express = require('express');
 const router = express.Router();
-var http = require('https');
+
 const axios = require('axios');
-const userAPI = 'https://jsonplaceholder.typicode.com/users';
+const UserAPI = 'https://jsonplaceholder.typicode.com/users';
 
 
 
 router.get('/',(req,res)=>{
-    
-    // axios.get(`${UserAPI}`).then(users=>{ 
+
+    axios.get(`${UserAPI}`).then(users=>{ 
         
-    //     var newList = [];
-    //     var response = user.data;
-    //     response.forEach(i => {
-    //         console.log(i.name);
-    //         newList.push({"name":i.name});
-    //     });
-    //     console.log("----------------------");
-    //     console.log(newList);
-    //     console.log("---------------------");
-    //     res.status(200).json(newList);
+        // for (x in users){
+        //     users[x]["name"];
+        //     res.status(200).json(users[x]["name"]);
+        // }
+        // for(var i=0;i<users.length;i++){
+        //     // console.log("Getting the name of first three users: ",users.data[i]["name"]);
+        //     user=users[i]["name"];
+        //     // res.status(200).json();
+        //     // if(i==2)break;
 
-    // })
-    // .catch(error =>{
-    //     console.log(error);
-    //     res.status(500).send(error);
-    // })
+        // }
+        res.status(200).json(users.data);
+      
 
-
-        var response;
-        http.get(userAPI, function(res){
-        var body = '';
-
-        res.on('data', function(chunk){
-            body += chunk;
-        });
-        res.on('end', function(){
-            response = JSON.parse(body);
-            var newList = [];
-            response.forEach(i => {
-                console.log(i.name);
-                newList.push({"name":i.name});
-            });
-            console.log("----------------------");
-            console.log(newList);
-            console.log("---------------------");
-            res.status(200).json(newList);
-            
-        });
-    }).on('error', function (err) {
-        console.log('Error:', err);
-    });
+    })
+    .catch(error =>{
+        res.status(500).send(error);
+    })
 
 });
 
