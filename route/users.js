@@ -4,26 +4,10 @@ const router = express.Router();
 const axios = require('axios');
 const UserAPI = 'https://jsonplaceholder.typicode.com/users';
 
-
-
 router.get('/',(req,res)=>{
 
     axios.get(`${UserAPI}`).then(users=>{ 
-        
-        // for (x in users){
-        //     users[x]["name"];
-        //     res.status(200).json(users[x]["name"]);
-        // }
-        // for(var i=0;i<users.length;i++){
-        //     // console.log("Getting the name of first three users: ",users.data[i]["name"]);
-        //     user=users[i]["name"];
-        //     // res.status(200).json();
-        //     // if(i==2)break;
-
-        // }
         res.status(200).json(users.data);
-      
-
     })
     .catch(error =>{
         res.status(500).send(error);
